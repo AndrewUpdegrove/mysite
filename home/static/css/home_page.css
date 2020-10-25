@@ -57,3 +57,9 @@
 		font-size: 5em;
 	}
 }
+
+@media only screen and (max-width: 300px) {
+	.display-1{
+		font-size 3em;
+	}
+}
