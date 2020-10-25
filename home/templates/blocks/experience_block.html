@@ -1,0 +1,13 @@
+{% load wagtailcore_tags %}
+
+<div class="col-md-4">
+  {% if value.location_site %}
+  <p class="font-weight-bold" style="margin-bottom:0" ><a href="{{ value.location_site }}" target= "_blank">{{ value.location }}</a></p>
+  {% else %}
+  <p class="font-weight-bold" style="margin-bottom:0" >{{ value.location }}</p>
+  {% endif %}
+  <p style="margin-top:0">{{ value.time_period }}</p>
+</div>
+<div class="col-md-8 exp-text">
+  {{ value.description|richtext }}
+</div>

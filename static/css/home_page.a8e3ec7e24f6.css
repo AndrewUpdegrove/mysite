@@ -1,0 +1,53 @@
+.homepage p {
+	font-size: 1.4em;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	margin: 20px auto;
+	color: #000000;
+}
+
+.exp-text p{
+	font-size: 1.2em;
+
+}
+
+.jumbo-mask {
+	position:absolute;
+	width: 90%;
+	height: 100%;
+	bottom: 0;
+	background: radial-gradient(rgba(0,0,0,.3) 0%, transparent 70%);
+}
+
+.jumbotron {
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top:15%;
+	padding-bottom:15%;
+	position: relative;
+}
+
+.section-header {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	color: #1b211d;
+	text-align: center;
+	border-bottom: 1px solid gray;
+}
+
+.homepage .profile-pic {
+	border-radius: 50%;
+	display: inline-block;
+	margin: auto;
+	text-align: center;
+
+}
+
+.page-section {
+	padding-bottom: 2.5%;
+	padding-top: 2.5%;
+}
+
+.odd-color {
+	background-color: #fdfff0;
+}

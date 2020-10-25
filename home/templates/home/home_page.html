@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{%block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<a name="top"></a>
+<div class="homepage" style="background-color: #d8e4fc;">
+	{% image page.banner_image min-1920x600 as image %}
+	<div class="container-fluid jumbotron" style="background-image:url('{{image.url}}');">
+		<div class="jumbo-mask"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2" style="text-align: center;">
+					<h1 class="display-1" style="font-family: 'Comfortaa', sans-serif; font-weight: 500">{{ page.name_display }}</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container page-section">
+		<div class="row justify-content-lg-center">
+			<div class="col col-lg-6">
+				<h2 class="section-header display-4">About Me</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 align-self-center justify-content-center text-center">
+				{% image page.profile_pic fill-280x280 class="rounded-circle img-fluid" %}
+			</div>
+			<div class="col-md-8 offset-md-1">
+				{{ page.bio|richtext }}
+			</div>
+		</div>
+	</div>
+	<div class="odd-color">
+		<div class="container page-section">
+			<div class="row justify-content-lg-center">
+				<div class="col col-lg-6">
+					<h2 class="section-header display-4">Education</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% for block in page.edu_history %}
+					{% include_block block %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="container page-section">
+		<div class="row justify-content-lg-center">
+			<div class="col col-lg-6">
+				<h2 class="section-header display-4">Work Experience</h2>
+			</div>
+		</div>
+		<div class="row">
+			{% for block in page.work_history %}
+				{% include_block block %}
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock content %}
