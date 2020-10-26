@@ -64,6 +64,13 @@ class HomePage(Page):
         ('item', ExperienceBlock()),
     ], null=True)
 
+    motivation_header = models.CharField(
+            max_length=255,
+            default='Motivation',
+            help_text='Title for motivation section'
+    )
+    motivation = RichTextField(blank=True)
+
     work_history = StreamField([
         ('item', ExperienceBlock()),
     ], null=True)
@@ -78,6 +85,10 @@ class HomePage(Page):
                 ImageChooserPanel('profile_pic'),
                 FieldPanel('bio'),
                 ], heading='Biography Section'),
+            MultiFieldPanel([
+                FieldPanel('motivation_header'),
+                FieldPanel('motivation'),
+            ], heading='Motivation Section'),
             StreamFieldPanel('edu_history', heading='Education History'),
             StreamFieldPanel('work_history', heading='Work History')
             ]
