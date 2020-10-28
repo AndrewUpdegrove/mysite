@@ -26,6 +26,7 @@ class ExperienceBlock(blocks.StructBlock):
     location_site = blocks.URLBlock(required=True, max_length=255)
     time_period = blocks.CharBlock(required=False)
     description = blocks.RichTextBlock(required=True)
+    associated_image = ImageChooserBlock(required=False)
 
     class Meta:
         icon="doc-full"
