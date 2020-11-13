@@ -50,11 +50,11 @@
 		<div class="container page-section">
 			<div class="row justify-content-lg-center">
 				<div class="col col-lg-6">
-					<h2 class="section-header display-4">Education</h2>
+					<h2 class="section-header display-4">Work Experience</h2>
 				</div>
 			</div>
 			<div class="row">
-				{% for block in page.edu_history %}
+				{% for block in page.work_history %}
 					{% include_block block %}
 				{% endfor %}
 			</div>
@@ -63,14 +63,15 @@
 	<div class="container page-section">
 		<div class="row justify-content-lg-center">
 			<div class="col col-lg-6">
-				<h2 class="section-header display-4">Work Experience</h2>
+				<h2 class="section-header display-4">Education</h2>
 			</div>
 		</div>
 		<div class="row">
-			{% for block in page.work_history %}
+			{% for block in page.edu_history %}
 				{% include_block block %}
 			{% endfor %}
 		</div>
 	</div>
+
 
 {% endblock content %}
